@@ -20,8 +20,8 @@ yaletown = Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: 
 @mens_stores.each { |store| puts store.name, store.annual_revenue }
 
 #4.4.
-Store.where(mens_apparel: false).where(womens_apparel: true).each do |store| 
-  if store.annual_revenue < 1000000 
-    puts store.name 
-  end
+broke_store = Store.where(mens_apparel: false).where(womens_apparel: true).where("annual_revenue < 1000000")
+
+broke_store.each do |store|
+  puts store.name
 end
