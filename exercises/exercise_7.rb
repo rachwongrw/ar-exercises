@@ -13,6 +13,12 @@ puts "----------"
 puts "Please provide a store name:"
 
 useranswer = $stdin.gets.chomp 
-useranswer.save
+
 #7.3
 useranswer = Store.create(name: "#{useranswer}")
+
+
+# 7.4
+useranswer.errors.messages.each do |message|
+  puts message
+end
